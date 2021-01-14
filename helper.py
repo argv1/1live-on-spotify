@@ -9,7 +9,6 @@ from   pathlib import Path
 import re
 import requests
 
-
 # Define path and filename
 base_path = Path(__file__).parent.absolute()
 playlists = base_path / "playlists"
