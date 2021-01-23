@@ -4,7 +4,6 @@
     Created by argv1 https://github.com/argv1/1live-on-spotify
 '''
 import argparse
-import csv
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import json
