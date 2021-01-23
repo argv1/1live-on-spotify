@@ -13,15 +13,15 @@ run pip to ensure all requirements are fulfilled
 ```bash
 pip3 install -r requirements.txt
 ```
-</br>
-now you can run the script by providing a new url:
+- 
+- now you can run the script by providing a new url:
 ```bash
 i.e. main.py -u https://www1.wdr.de/radio/1live/on-air/sendungen/1live-fiehe/index.html
 ```
 
 ## License
-This code is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/). 
-For more details, please take a look at the [LICENSE file](https://github.com/argv1/OReilly-Downloader/blob/master/LICENSE).
+- This code is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/). 
+- For more details, please take a look at the [LICENSE file](https://github.com/argv1/OReilly-Downloader/blob/master/LICENSE).
 
 ## Outlook
 - [x] Scrap playlist from 1live.de
