@@ -20,7 +20,7 @@ i.e. main.py -u https://www1.wdr.de/radio/1live/on-air/sendungen/1live-fiehe/ind
 ```
 
 ## License
-This code is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/). \n
+This code is licensed under the [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/). <p>
 For more details, please take a look at the [LICENSE file](https://github.com/argv1/OReilly-Downloader/blob/master/LICENSE).
 
 ## Outlook
