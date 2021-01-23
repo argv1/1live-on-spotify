@@ -24,7 +24,7 @@ This code is licensed under the [GNU General Public License v3.0](https://choose
 For more details, please take a look at the [LICENSE file](https://github.com/argv1/OReilly-Downloader/blob/master/LICENSE).
 
 ## Outlook
-[x] Scrap playlist from 1live.de
-[x] Create playlist on spotify based on scraped tracks
-[] Improving unicode & character encoding
+- [x] Scrap playlist from 1live.de
+- [x] Create playlist on spotify based on scraped tracks
+- [ ] Improving unicode & character encoding
 Feel free to adjust the code
