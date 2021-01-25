@@ -19,11 +19,11 @@ base_path = Path(__file__).parent.absolute()
 playlists = base_path / "playlists"
 fetched_shows = playlists / "fetched_shows.csv"
 base_url = "https://www1.wdr.de/radio/1live/on-air/sendungen/1live-fiehe/fiehe-"
-SPOTIPY_USERNAME = "SPOTIFY_USERNAME"
-SPOTIPY_CLIENT_ID = "SPOTIPY_CLIENT_ID"
-SPOTIPY_CLIENT_SECRET = "SPOTIPY_CLIENT_SECRET"
+SPOTIFY_USERNAME = "SPOTIFY_USERNAME"
+SPOTIFY_CLIENT_ID = "SPOTIFY_CLIENT_ID"
+SPOTIFY_CLIENT_SECRET = "SPOTIFY_CLIENT_SECRET"
 spotify_scope = "playlist-modify-public" 
-token = util.prompt_for_user_token(username=SPOTIPY_USERNAME, scope=spotify_scope, client_id=SPOTIPY_CLIENT_ID, client_secret=SPOTIPY_CLIENT_SECRET, redirect_uri='http://localhost/')
+token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='http://localhost/')
 sp = spotipy.Spotify(auth=token)
 playlist_description = f"Created by argv1 https://github.com/argv1/1live-on-spotify"
 
@@ -49,7 +49,7 @@ def get_track_ids(df):
     return track_ids
 
 def get_playlist_id(playlist_name):
-    playlists = sp.user_playlists(SPOTIPY_USERNAME)
+    playlists = sp.user_playlists(SPOTIFY_USERNAME)
     # iterate through spotify_username playlists
     for playlist in playlists['items']:
         # filter for newly created playlist
@@ -72,7 +72,7 @@ def remove_duplicates(seq, idfun=None):
 def generate_playlist(df, date): 
     # Create playlist
     playlist_name = f"Klaus Fiehes Korrektes Zeug vom {date}"    
-    sp.user_playlist_create(user=SPOTIPY_USERNAME, name=playlist_name, description=playlist_description)
+    sp.user_playlist_create(user=SPOTIFY_USERNAME, name=playlist_name, description=playlist_description)
 
     # Get Tracks
     track_ids = get_track_ids(df)
@@ -82,7 +82,7 @@ def generate_playlist(df, date):
     playlist_id = get_playlist_id(playlist_name)
 
     # Populate playlist
-    sp.user_playlist_add_tracks(SPOTIPY_USERNAME, playlist_id, track_ids)
+    sp.user_playlist_add_tracks(SPOTIFY_USERNAME, playlist_id, track_ids)
 
 def get_tracks(page):
     try:
@@ -101,10 +101,9 @@ def get_tracks(page):
     return(df, filename, True)
 
 def main():
-    for page in range(602,708,2):   
+    for page in range(704,708,2):   
         df, date, check = get_tracks(page)
         if(check):
-            print("hier")
             generate_playlist(df, date)
             print(f"Playlist für {page} {date} erfolgreich\n.")
         
