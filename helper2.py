@@ -49,7 +49,7 @@ def get_track_ids(df):
     return track_ids
 
 def get_playlist_id(playlist_name):
-    playlists = sp.user_playlists(spotify_username)
+    playlists = sp.user_playlists(SPOTIPY_USERNAME)
     # iterate through spotify_username playlists
     for playlist in playlists['items']:
         # filter for newly created playlist
