@@ -23,7 +23,7 @@ SPOTIPY_USERNAME = "SPOTIFY_USERNAME"
 SPOTIPY_CLIENT_ID = "SPOTIPY_CLIENT_ID"
 SPOTIPY_CLIENT_SECRET = "SPOTIPY_CLIENT_SECRET"
 spotify_scope = "playlist-modify-public" 
-token = util.prompt_for_user_token(username=spotify_username, scope=spotify_scope, client_id=SPOTIPY_CLIENT_ID, client_secret=SPOTIPY_CLIENT_SECRET, redirect_uri='http://localhost/')
+token = util.prompt_for_user_token(username=SPOTIPY_USERNAME, scope=spotify_scope, client_id=SPOTIPY_CLIENT_ID, client_secret=SPOTIPY_CLIENT_SECRET, redirect_uri='http://localhost/')
 sp = spotipy.Spotify(auth=token)
 playlist_description = f"Created by argv1 https://github.com/argv1/1live-on-spotify"
 
@@ -72,7 +72,7 @@ def remove_duplicates(seq, idfun=None):
 def generate_playlist(df, date): 
     # Create playlist
     playlist_name = f"Klaus Fiehes Korrektes Zeug vom {date}"    
-    sp.user_playlist_create(user=spotify_username, name=playlist_name, description=playlist_description)
+    sp.user_playlist_create(user=SPOTIPY_USERNAME, name=playlist_name, description=playlist_description)
 
     # Get Tracks
     track_ids = get_track_ids(df)
@@ -82,7 +82,7 @@ def generate_playlist(df, date):
     playlist_id = get_playlist_id(playlist_name)
 
     # Populate playlist
-    sp.user_playlist_add_tracks(spotify_username, playlist_id, track_ids)
+    sp.user_playlist_add_tracks(SPOTIPY_USERNAME, playlist_id, track_ids)
 
 def get_tracks(page):
     try:
