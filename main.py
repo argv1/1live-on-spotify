@@ -69,7 +69,7 @@ def remove_duplicates(seq, idfun=None):
 
 def generate_playlist(df, date): 
     # Create playlist
-    playlist_name = f"Klaus Fiehes Korrektes Zeug vom {date}"    
+    playlist_name = f"1live Fliehe vom {date}"    
     sp.user_playlist_create(user=SPOTIFY_USERNAME, name=playlist_name, description=playlist_description)
 
     # Get Tracks
