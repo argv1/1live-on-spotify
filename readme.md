@@ -13,8 +13,10 @@ run pip to ensure all requirements are fulfilled
 ```bash
 pip3 install -r requirements.txt
 ```
+ensure that you register for a free spotify developers account [here](https://developer.spotify.com/)
+and replace the placeholders for SPOTIFY_USERNAME, SPOTIPY_CLIENT_ID and SPOTIPY_CLIENT_SECRET with our personal.
 
-now you can run the script by providing a new url:
+now you can run the script by providing an url:
 ```bash
 i.e. main.py -u https://www1.wdr.de/radio/1live/on-air/sendungen/1live-fiehe/index.html
 ```
