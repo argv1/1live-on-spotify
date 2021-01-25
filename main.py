@@ -18,7 +18,7 @@ import spotipy.util as util
 base_path = Path(__file__).parent.absolute()
 config_f = base_path / "config.ini"
 playlists = base_path / "playlists"
-spotify_username = "YOUR-USER-ID"
+SPOTIPY_USERNAME = "YOUR-USER-ID"
 SPOTIPY_CLIENT_ID = "YOUR_SPOTIPY_CLIENT_ID"
 SPOTIPY_CLIENT_SECRET = "YOUR_SPOTIPY_CLIENT_SECRET"
 spotify_scope = "playlist-modify-public" 
