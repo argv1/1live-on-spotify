@@ -14,7 +14,7 @@ import requests
 import spotipy
 import spotipy.util as util
 
-# Define path and filename
+# Global settings
 base_path = Path(__file__).parent.absolute()
 playlists = base_path / "playlists"
 SPOTIFY_USERNAME = "YOUR-USER-ID"
