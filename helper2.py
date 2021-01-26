@@ -56,19 +56,6 @@ def get_playlist_id(playlist_name):
         if playlist['name'] == playlist_name:  
             return(playlist['id'])
 
-def remove_duplicates(seq, idfun=None):
-   # Thx to https://www.peterbe.com/plog/uniqifiers-benchmark
-   if idfun is None:
-       def idfun(x): return x
-   seen = {}
-   result = []
-   for item in seq:
-       marker = idfun(item)
-       if marker in seen: continue
-       seen[marker] = 1
-       result.append(item)
-   return result
-
 def generate_playlist(df, date): 
     # Create playlist
     playlist_name = f"1live Fliehe vom {date}"    
@@ -78,7 +65,7 @@ def generate_playlist(df, date):
     track_ids = get_track_ids(df)
 
     # Remove duplicate tracks order preserving  
-    track_ids = remove_duplicates(track_ids)
+    track_ids = list(dict.fromkeys(track_ids)
     playlist_id = get_playlist_id(playlist_name)
 
     # Populate playlist
