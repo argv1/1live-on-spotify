@@ -29,6 +29,5 @@ For more details, please take a look at the [LICENSE file](https://github.com/ar
 - [x] Scrap playlist from 1live.de
 - [x] Create playlist on spotify based on scraped tracks
 - [ ] Improving unicode & character encoding
-- [ ] Fetch all fb posts from Klaus to create playlist for the old 1 Live Fiehe / Raum und Zeit shows
-
+- [ ] Proccess all [old playlist](http://www.apage4u.de/music/playlist_fiehe.php)
 Feel free to adjust the code
