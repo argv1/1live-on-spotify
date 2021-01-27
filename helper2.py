@@ -16,7 +16,6 @@ import spotipy.util as util
 # Define path and filename
 base_path = Path(__file__).parent.absolute()
 playlists = base_path / "playlists"
-fetched_shows = playlists / "fetched_shows.csv"
 base_url = "https://www1.wdr.de/radio/1live/on-air/sendungen/1live-fiehe/fiehe-"
 SPOTIFY_USERNAME = "SPOTIFY_USERNAME"
 SPOTIFY_CLIENT_ID = "SPOTIFY_CLIENT_ID"
