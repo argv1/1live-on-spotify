@@ -63,7 +63,7 @@ def generate_playlist(df, date):
     track_ids = get_track_ids(df)
 
     # Remove duplicate tracks order preserving  
-    track_ids = list(dict.fromkeys(track_ids)
+    track_ids = list(dict.fromkeys(track_ids))
     playlist_id = get_playlist_id(playlist_name)
 
     # Populate playlist
