@@ -12,7 +12,6 @@ import requests
 # Define path and filename
 base_path = Path(__file__).parent.absolute()
 playlists = base_path / "playlists"
-fetched_shows = playlists / "fetched_shows.csv"
 base_url = "https://www1.wdr.de/radio/1live/on-air/sendungen/1live-fiehe/fiehe-"
 
 def get_tracks():
