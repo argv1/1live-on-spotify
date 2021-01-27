@@ -3,7 +3,6 @@
     Spotify playlist generator based on the tracks from einslive Klaus Fiehes "Korrektes Zeug"
 
 '''
-import argparse
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import json
