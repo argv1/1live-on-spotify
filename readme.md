@@ -5,7 +5,7 @@
 Create a spotify playlist based on the songs from Klaus Fiehes show 1LIVE FIEHE (Korrektes Zeug, Raum und Zeit) using spotipy.
 
 ## Playlists
-If you just want to listen to the songs, you could follow my [spotify profile](https://open.spotify.com/user/11123260766) or just visit my [spotify playlists](https://open.spotify.com/playlist/5JY78EZpGkXJhhUsdqoEk2).
+If you just want to listen to the songs, you could follow my visit my [spotify playlists](https://open.spotify.com/playlist/5JY78EZpGkXJhhUsdqoEk2) or hear the orignal shows at [mixcloud](https://www.mixcloud.com/EinsliveFiehe/) (thx to the unknown uploader).
 
 ## Usage
 run pip to ensure all requirements are fulfilled
@@ -28,6 +28,7 @@ For more details, please take a look at the [LICENSE file](https://github.com/ar
 ## Outlook
 - [x] Scrap playlist from 1live.de
 - [x] Create playlist on spotify based on scraped tracks
-- [ ] Improving unicode & character encoding
 - [ ] Proccess all [old playlist](http://www.apage4u.de/music/playlist_fiehe.php)
+- [ ] Improving unicode & character encoding
+- [ ] Shazam the songs from the very old shows, somebody provided at [mixcloud](https://www.mixcloud.com/EinsliveFiehe/)
 Feel free to adjust the code
