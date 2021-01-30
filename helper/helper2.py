@@ -89,6 +89,9 @@ def main():
     for page in range(704,708,2):   
         df, date, check = get_tracks(page)
         if(check):
+            # Remove unnecessary whitespaces
+            df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+                                  
             generate_playlist(df, date)
             print(f"Playlist für {page} {date} erfolgreich\n.")
         
