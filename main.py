@@ -90,6 +90,10 @@ def main():
     parser.add_argument('-u', '--url', help='Enter the url of the show that should be scrapped', type=str, required=True)
     args = parser.parse_args()
     df, date = get_tracks(args.url)
+
+    # Remove unnecessary whitespaces
+    df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
+
     generate_playlist(df, date)
         
 if __name__  == "__main__":
