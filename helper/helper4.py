@@ -81,6 +81,9 @@ def main():
             print(f"Not able to open {entry}.\n")
             sys.exit(1)
 
+        # Remove unnecessary whitespaces
+        df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)                                       
+                                                
         generate_playlist(df, date)
         print(f"Playlist für {date} erfolgreich\n.")
         
