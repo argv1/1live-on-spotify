@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 '''
-    Spotify playlist generator based on the tracks from einslive Klaus Fiehes "Korrektes Zeug"
+    Small helper script to create spotify playlist based on provided csv file.
 
 '''
 import argparse
