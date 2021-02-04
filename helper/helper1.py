@@ -3,7 +3,6 @@
     Small helper script to create csv playlist files based on the current 1live FLIEHE show.
 
 '''
-import csv
 import pandas as pd
 from   pathlib import Path
 import re
