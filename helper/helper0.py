@@ -3,7 +3,6 @@
     Small helper script to create .csv playlist files based on last years 1live playlist.
 
 '''
-import csv
 import pandas as pd
 from   pathlib import Path
 import re
