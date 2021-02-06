@@ -3,7 +3,6 @@
     Spotify playlist generator based on the tracks from einslive Klaus Fiehes "Korrektes Zeug"
 
 '''
-import json
 from os import listdir
 import pandas as pd
 from   pathlib import Path
