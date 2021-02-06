@@ -6,7 +6,6 @@
 import argparse
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
-import json
 import pandas as pd
 from   pathlib import Path
 import re
