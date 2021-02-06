@@ -43,7 +43,7 @@ def get_track_ids(df):
                 else:
                     track_ids_not_found.append((f"{df['Titel'][i]} from {df['Interpret'][i]}"))
                     continue
-    print(f"Thw following tracks could not be found on spotify: {set(track_ids_not_found)}")
+    print(f"The following tracks could not be found on spotify: {set(track_ids_not_found)}")
     return track_ids
 
 def get_playlist_id(playlist_name):
