@@ -21,7 +21,7 @@ SPOTIFY_USERNAME = "YOUR-USER-ID"
 SPOTIFY_CLIENT_ID = "YOUR_SPOTIFY_CLIENT_ID"
 SPOTIFY_CLIENT_SECRET = "YOUR_SPOTIFY_CLIENT_SECRET"
 spotify_scope = "playlist-modify-public" 
-token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='http://localhost/')
+token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='https://localhost/:8080')
 sp = spotipy.Spotify(auth=token)
 playlist_description = f"Created by argv1 https://github.com/argv1/1live-on-spotify"
 
