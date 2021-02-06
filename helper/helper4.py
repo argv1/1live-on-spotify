@@ -5,7 +5,6 @@
 '''
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
-import json
 from os import listdir
 import pandas as pd
 from   pathlib import Path
