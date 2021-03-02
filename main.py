@@ -78,10 +78,14 @@ def get_tracks(url):
         df = tab_list[0]
         df.dropna(axis=0, inplace=True)
         df.reset_index(drop=True, inplace=True)
-        df.to_csv(f"{playlists}/{filename}.csv", index=False, sep=";", encoding="iso-8859-1")
+        try:
+            df.to_csv(f"{playlists}/{filename}.csv", index=False, sep=";", encoding="iso-8859-1")
+        except: 
+            df.to_csv(f"{playlists}/{filename}.csv", index=False, sep=";", encoding="utf-8")    
     except:
         print(f"{url} does not exists.")
     return(df, filename)
+
 
 def main():
     # Initiate the parser
