@@ -20,7 +20,6 @@ SPOTIFY_CLIENT_SECRET = "SPOTIFY_CLIENT_SECRET"
 spotify_scope = "playlist-read-private" 
 token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='https://localhost/:8080')
 sp = spotipy.Spotify(auth=token)
-playlist_description = f"Created by argv1 https://github.com/argv1/1live-on-spotify"
  
 playlists = sp.user_playlists(SPOTIFY_USERNAME)
 df = pd.DataFrame()
