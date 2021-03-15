@@ -79,7 +79,7 @@ def get_tracks(url):
         df.dropna(axis=0, inplace=True)
         df.reset_index(drop=True, inplace=True)
         try:
-            df.to_csv(f"{playlists}/{filename}.csv", index=False, sep=";", encoding="iso-8859-1")
+            df.to_csv(f"{playlists}/{filename}.csv", index=False, sep=";", encoding="cp1252") #iso-8859-1, iso-8859-15
         except: 
             df.to_csv(f"{playlists}/{filename}.csv", index=False, sep=";", encoding="utf-8")    
     except:
