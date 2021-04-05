@@ -862,3 +862,6 @@ Playlist successful created for 2020-11-08
 {'The Elephants from Twisk', 'Wunday (Crazy After Dark) from Ron Gallo'} for 2021-02-28
 {'Drunk And In Love from Alice Cooper', 'Fxck It Then from Yaya Bey', 'Take It Back (GODMODE950 Version) from Denzel Curry| Kenny Beats'} for 2021-03-07
 {'Oh Yeah from Can', 'West Ten from AJ Tracey & Mabel', 'Lonely from Paper Kites feat. Gena Rose Bruce', 'Kesik Cayir from Altin Gün', 'Tourisme (Tobias Levin Accent-Mix) from Kante', 'Tourne En Rond from BabyJoy', 'Niemand Kann Mir Sagen from Die P', '(Ich Will So Sein Wie) Nina Hagen from Isolation Berlin'} for 2021-03-14
+{'Kölner Straße from Love Songs', 'Romantico from Servicio Al Cliente'} for 2021-03-21
+{} for 2021-03-28
+{'Pele (MadMadMad Remix) from IKOQWE', 'Cade Voce from Joao Selva', 'Nobody Knows We Are Fun from Chai'} for 2021-04-04
