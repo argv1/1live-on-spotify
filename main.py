@@ -4,6 +4,7 @@
     Created by argv1 https://github.com/argv1/1live-on-spotify
 '''
 import argparse
+from configparser import ConfigParser
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import pandas as pd
@@ -16,11 +17,13 @@ import spotipy.util as util
 # Global settings
 base_path = Path(__file__).parent.absolute()
 playlists = base_path / "playlists"
-SPOTIFY_USERNAME = "YOUR-USER-ID"
-SPOTIFY_CLIENT_ID = "YOUR_SPOTIFY_CLIENT_ID"
-SPOTIFY_CLIENT_SECRET = "YOUR_SPOTIFY_CLIENT_SECRET"
+config_file = ConfigParser()
+config_file.read(base_path / 'config.ini')
+SPOTIFY_USERNAME = config_file['AUTH']['SPOTIFY_USERNAME']
+SPOTIFY_CLIENT_ID = config_file['AUTH']['SPOTIFY_CLIENT_ID']
+SPOTIFY_CLIENT_SECRET = config_file['AUTH']['SPOTIFY_CLIENT_SECRET']
 spotify_scope = "playlist-modify-public" 
-token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='https://localhost/:8080')
+token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='http://localhost:8888/callback')
 sp = spotipy.Spotify(auth=token)
 playlist_description = f"Created by argv1 https://github.com/argv1/1live-on-spotify"
 
@@ -79,18 +82,17 @@ def get_tracks(url):
         df.dropna(axis=0, inplace=True)
         df.reset_index(drop=True, inplace=True)
         try:
-            df.to_csv(f"{playlists}/{filename}.csv", index=False, sep=";", encoding="cp1252") #iso-8859-1, iso-8859-15
+            df.to_csv(f"{playlists}/{filename}.csv", index=False, sep=";", encoding="cp1252")
         except: 
             df.to_csv(f"{playlists}/{filename}.csv", index=False, sep=";", encoding="utf-8")    
     except:
         print(f"{url} does not exists.")
     return(df, filename)
 
-
 def main():
     # Initiate the parser
     parser = argparse.ArgumentParser()
-    parser.add_argument('-u', '--url', help='Enter the url of the show that should be scrapped', type=str, required=True)
+    parser.add_argument('-u', '--url', help='Enter the url of the show that should be scrapped', type=str, default="https://www1.wdr.de/radio/1live/on-air/sendungen/1live-fiehe/index.html")
     args = parser.parse_args()
     df, date = get_tracks(args.url)
 
