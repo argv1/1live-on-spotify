@@ -13,7 +13,7 @@ SPOTIFY_CLIENT_SECRET = "SPOTIFY_CLIENT_SECRET"
 spotify_scope = "playlist-modify-public" 
 token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='http://localhost:8888/callback')
 sp = spotipy.Spotify(auth=token)
-playlist_description = f"Klaus Fiehes weekly 1live show, formaly known as Raum und Zeit\nCreated by argv1\nhttps://github.com/argv1/1live-on-spotify" 
+playlist_description = f"Klaus Fiehes weekly 1live show, formaly known as Raum und Zeit             Created by argv1 https://github.com/argv1/1live-on-spotify" 
 playlists = sp.user_playlists(SPOTIFY_USERNAME)
 
 while playlists:
