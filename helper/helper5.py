@@ -3,22 +3,19 @@
     Spotify playlist generator based on the tracks from einslive Klaus Fiehes "Korrektes Zeug"
 
 '''
-from os import listdir
+
 import pandas as pd
 from   pathlib import Path
-import re
-import requests
 import spotipy
 import spotipy.util as util
-import sys
 
 # Define path and filename
 base_path = Path(__file__).parent.absolute()
 SPOTIFY_USERNAME = "SPOTIFY_USERNAME"
 SPOTIFY_CLIENT_ID = "SPOTIFY_CLIENT_ID"
 SPOTIFY_CLIENT_SECRET = "SPOTIFY_CLIENT_SECRET"
-spotify_scope = "playlist-read-public" 
-token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='https://localhost/:8080')
+spotify_scope = "playlist-read-private" 
+token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='http://localhost:8888/callback')
 sp = spotipy.Spotify(auth=token)
  
 playlists = sp.user_playlists(SPOTIFY_USERNAME)
@@ -35,6 +32,8 @@ while playlists:
         playlists = sp.next(playlists)
     else:
         playlists = None
+
+df.reset_index(drop=True, inplace=True)
 
 # return an html table
 pd.set_option('display.max_colwidth', None)
