@@ -26,7 +26,7 @@ df = pd.DataFrame()
 
 while playlists:
     for i, playlist in enumerate(playlists['items']):
-        if("1live Fliehe" in playlist['name']):
+        if("1live Fiehe" in playlist['name']):
             df.loc[i + playlists['offset'], "Image"] =  f'<img src="{playlist["images"][0]["url"]}" alt="{playlist["name"]} width="50" height="60">' 
             df.loc[i + playlists['offset'], "Name"] = playlist['name']
             df.loc[i + playlists['offset'], "URL"] = f'<a href="{playlist["external_urls"]["spotify"]}">{playlist["uri"]}</a>'
