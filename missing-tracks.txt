@@ -865,3 +865,15 @@ Playlist successful created for 2020-11-08
 {'Kölner Straße from Love Songs', 'Romantico from Servicio Al Cliente'} for 2021-03-21
 {} for 2021-03-28
 {'Pele (MadMadMad Remix) from IKOQWE', 'Cade Voce from Joao Selva', 'Nobody Knows We Are Fun from Chai'} for 2021-04-04
+{'4am (Park End Refix) from Low End Activist', 'Visions from Jose Gonzalez', 'Space from Biome', 'Mont De Piete from Robbing Millions', 'Uptown from Dis', 'Wilshire from Tyler, The Creator', 'Hot Wind Blows from Tyler, The Creator feat. Lil Wayne', 'Lucid Dream from ASC'} for 2021-06-27
+{"i'm Sorry, Are You? from Leepa", 'Sad But True (Live) from Sam Fender', 'Diana (You Don´t Even Know) from Fred Again', 'Skeletons from Easy Life', 'Don´t Be Afraid from Diplo, Damian Lazarus & Jungle', 'Wildfires from Sault', 'Bitter Streets from Sault', 'Bad Medicine from FLORE'} for 2021-07-04
+...
+{'Over U from Caro', 'Witness Protection from Suuns', 'Spring Walks In The Bird Park from Metra Vestlud', 'Imaginary from FRS', 'Don´t Go Puttin Wishes In My Head from Torres', 'When There´s Love Around from Kiefer'} for 2021-07-11
+{'When There´s Love Around from Kiefer', "On And On from Rejjie Snow & Cam O'bi", 'Bevor Du Aufstehst from Der Frühling', 'Audre from NOVAA', 'Don´t Go Puttin Wishes In My Head from Torres', 'Er Ist Wieder Da from Marion Maerz'} for 2021-07-18
+{'Kiss The Corners from Torres', 'Fear & Loathing from Cartel Madras', 'Midi Ceremony from Amtrac', 'Remember This Picture from Kiefer', 'Imaginary from FRS', 'Nikki Swango from Fluppe'} for 2021-07-25
+
+
+
+
+
+
