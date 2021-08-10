@@ -871,9 +871,5 @@ Playlist successful created for 2020-11-08
 {'Over U from Caro', 'Witness Protection from Suuns', 'Spring Walks In The Bird Park from Metra Vestlud', 'Imaginary from FRS', 'Don´t Go Puttin Wishes In My Head from Torres', 'When There´s Love Around from Kiefer'} for 2021-07-11
 {'When There´s Love Around from Kiefer', "On And On from Rejjie Snow & Cam O'bi", 'Bevor Du Aufstehst from Der Frühling', 'Audre from NOVAA', 'Don´t Go Puttin Wishes In My Head from Torres', 'Er Ist Wieder Da from Marion Maerz'} for 2021-07-18
 {'Kiss The Corners from Torres', 'Fear & Loathing from Cartel Madras', 'Midi Ceremony from Amtrac', 'Remember This Picture from Kiefer', 'Imaginary from FRS', 'Nikki Swango from Fluppe'} for 2021-07-25
-{'New You from My Bloody Valentine', 'Daniel* from SEB', 'Gamma Ray from Lump', 'My Future from Billie Eilish', 'It´s The Sun from The Polyphonic Spree', 'Waitin´ For The Bus from ZZ Top', 'Killer Lover Boy from SEB', 'Big Leap from Torres', 'Animal from Lump', 'Calipso from Affkt'} for 2021-07-25
-
-
-
-
-
+{'New You from My Bloody Valentine', 'Big Leap from Torres', 'It´s The Sun from The Polyphonic Spree', 'Waitin´ For The Bus from ZZ Top', 'Gamma Ray from Lump', 'Calipso from Affkt', 'Killer Lover Boy from SEB', 'My Future from Billie Eilish', 'Animal from Lump', 'Daniel* from SEB'} for 2021-08-01
+{'Du Und Ich from Blond', 'Zukunft from Fibel', 'Fear & Loathing from Cartel Madras', 'Over U from Caro', 'Space from El-B', 'Nobody from NAS feat. Ms. Lauryn Hill', 'Death Row East from NAS', 'Seven Suns from Newmen', 'Something from Atmoshere'} for 2021-08-08
