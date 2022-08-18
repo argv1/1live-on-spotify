@@ -5,7 +5,7 @@
 Create a spotify playlist based on the songs from Klaus Fiehes show 1LIVE FIEHE (Korrektes Zeug, Raum und Zeit) using spotipy.
 
 ## Playlists
-If you just want to listen to the songs, you could check out this [overview](https://spty.shell42.de/) or hear the orignal shows at [mixcloud](https://www.mixcloud.com/EinsliveFiehe/) (thx to the unknown uploader).
+If you just want to listen to the songs, you could check out this [overview](https://spty.shell42.de/) or hear the orignal shows at [mixcloud](https://www.mixcloud.com/EinsliveFiehe/) and [fiehe.info](https://fiehe.info/blog/) (thx to the unknown uploader).
 
 ## Usage
 run pip to ensure all requirements are fulfilled
