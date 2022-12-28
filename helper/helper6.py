@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 '''
-    Spotify playlist mass renaming
+    Spotify playlist mass renaming (description)
 
 '''
 import spotipy
@@ -18,9 +18,9 @@ playlists = sp.user_playlists(SPOTIFY_USERNAME)
 
 while playlists:
     for i, playlist in enumerate(playlists['items']):
-        if("1live Fliehe" in playlist['name']):
+        if("1live Klaus Fliehe" in playlist['name']):
             playlist_name = "1live F" + playlist['name'][8:]
-            sp.user_playlist_change_details(sp.user("11123260766"), playlist['id'], name=playlist_name, public=True, collaborative=None, description=playlist_description)    
+            sp.playlist_change_details(playlist_id=playlist['id'], name=playlist_name, public=True, collaborative=None, description=playlist_description)
     if playlists['next']:
         playlists = sp.next(playlists)
     else:

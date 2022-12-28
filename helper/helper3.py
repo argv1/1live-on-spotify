@@ -5,11 +5,8 @@
 '''
 import argparse
 from fuzzywuzzy import fuzz
-from fuzzywuzzy import process
 import pandas as pd
 from   pathlib import Path
-import re
-import requests
 import spotipy
 import spotipy.util as util
 import sys
@@ -17,12 +14,11 @@ import sys
 # Define path and filename
 base_path = Path(__file__).parent.absolute()
 playlists = base_path / "playlists"
-base_url = "https://www1.wdr.de/radio/1live/on-air/sendungen/1live-fiehe/fiehe-"
 SPOTIFY_USERNAME = "SPOTIFY_USERNAME"
 SPOTIFY_CLIENT_ID = "SPOTIFY_CLIENT_ID"
 SPOTIFY_CLIENT_SECRET = "SPOTIFY_CLIENT_SECRET"
 spotify_scope = "playlist-modify-public" 
-token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='http://localhost/')
+token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='http://localhost:8888/callback')
 sp = spotipy.Spotify(auth=token)
 playlist_description = f"Created by argv1 https://github.com/argv1/1live-on-spotify"
 
@@ -31,18 +27,18 @@ def get_track_ids(df):
     track_ids, track_ids_not_found = [], []
     # Track Info Box Flow
     for i in range(len(df)):
-        results = sp.search(q=f"{df['Titel'][i]} {df['Interpret'][i]} ", limit=5, type='track')
+        results = sp.search(q=f"{df['Artist'][i]} {df['Track'][i]} ", limit=5, type='track')
         # if track isn't on spotify as queried, go to next track
         if results['tracks']['total'] == 0: 
             continue
         else:
             for j in range(len(results['tracks']['items'])):
                 # Get right response by matching on artist and title
-                if fuzz.partial_ratio(results['tracks']['items'][j]['artists'][0]['name'], df['Interpret'][i]) > 90 and fuzz.partial_ratio(results['tracks']['items'][j]['name'], df['Titel'][i]) > 90 : 
+                if fuzz.partial_ratio(results['tracks']['items'][j]['artists'][0]['name'], df['Artist'][i]) > 90 and fuzz.partial_ratio(results['tracks']['items'][j]['name'], df['Track'][i]) > 90 : 
                     track_ids.append(results['tracks']['items'][j]['id']) 
                     break
                 else:
-                    track_ids_not_found.append((f"{df['Titel'][i]} from {df['Interpret'][i]}"))
+                    track_ids_not_found.append((f"{df['Track'][i]} from {df['Artist'][i]}"))
                     continue
     print(f"The following tracks could not be found on spotify: {set(track_ids_not_found)}")
     return track_ids
@@ -57,7 +53,7 @@ def get_playlist_id(playlist_name):
 
 def generate_playlist(df, date): 
     # Create playlist
-    playlist_name = f"1live Fliehe vom {date}"    
+    playlist_name = f"1live Klaus Fliehe vom {date}"
     sp.user_playlist_create(user=SPOTIFY_USERNAME, name=playlist_name, description=playlist_description)
 
     # Get Tracks
@@ -68,7 +64,7 @@ def generate_playlist(df, date):
     playlist_id = get_playlist_id(playlist_name)
 
     # Populate playlist
-    sp.user_playlist_add_tracks(SPOTIFY_USERNAME, playlist_id, track_ids)
+    sp.playlist_add_items(playlist_id, track_ids)
 
 def main():
     # Initiate the parser
@@ -79,7 +75,7 @@ def main():
     try:
         filename = playlists / args.csvfile
         date = args.csvfile[:-4]
-        df = pd.read_csv(filename, delimiter=";", encoding="iso-8859-15")
+        df = pd.read_csv(filename, delimiter=";", encoding="cp1252")
     except:
         print(f"Not able to open {args.csvfile}.\n")
         sys.exit(1)

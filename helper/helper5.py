@@ -18,13 +18,13 @@ spotify_scope = "playlist-read-private"
 token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='http://localhost:8888/callback')
 sp = spotipy.Spotify(auth=token)
  
-playlists = sp.user_playlists(SPOTIFY_USERNAME)
+playlists = sp.user_playlists(user=SPOTIFY_USERNAME)
 df = pd.DataFrame()
 
 while playlists:
     for i, playlist in enumerate(playlists['items']):
-        if("1live Fiehe" in playlist['name']):
-            df.loc[i + playlists['offset'], "Image"] =  f'<img src="{playlist["images"][0]["url"]}" alt="{playlist["name"]} width="50" height="60">' 
+        if("1live Klaus Fiehe" in playlist['name']):
+            df.loc[i + playlists['offset'], "Image"] = f'<img src="{playlist["images"][0]["url"]}" alt="{playlist["name"]} width="50" height="60">'
             df.loc[i + playlists['offset'], "Name"] = playlist['name']
             df.loc[i + playlists['offset'], "URL"] = f'<a href="{playlist["external_urls"]["spotify"]}">{playlist["uri"]}</a>'
 
