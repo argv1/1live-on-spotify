@@ -13,19 +13,6 @@ import requests
 import spotipy
 import spotipy.util as util
 
-# Global settings
-base_path = Path(__file__).parent.absolute()
-playlists = base_path / "playlists"
-config_file = ConfigParser()
-config_file.read(base_path / 'config.ini')
-SPOTIFY_USERNAME = config_file['AUTH']['SPOTIFY_USERNAME']
-SPOTIFY_CLIENT_ID = config_file['AUTH']['SPOTIFY_CLIENT_ID']
-SPOTIFY_CLIENT_SECRET = config_file['AUTH']['SPOTIFY_CLIENT_SECRET']
-spotify_scope = "playlist-modify-public" 
-token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='http://localhost:8888/callback')
-sp = spotipy.Spotify(auth=token)
-playlist_description = f"Created by argv1 https://github.com/argv1/1live-on-spotify"
-
 def get_track_ids(df):
     # Get Spotify track ids for the playlist
     track_ids, track_ids_not_found = [], []
@@ -103,4 +90,17 @@ def main():
     generate_playlist(df, date)
         
 if __name__  == "__main__":
+    # Global settings
+    base_path = Path(__file__).parent.absolute()
+    playlists = base_path / "playlists"
+    config_file = ConfigParser()
+    config_file.read(base_path / 'config.ini')
+    SPOTIFY_USERNAME = config_file['AUTH']['SPOTIFY_USERNAME']
+    SPOTIFY_CLIENT_ID = config_file['AUTH']['SPOTIFY_CLIENT_ID']
+    SPOTIFY_CLIENT_SECRET = config_file['AUTH']['SPOTIFY_CLIENT_SECRET']
+    spotify_scope = "playlist-modify-public" 
+    token = util.prompt_for_user_token(username=SPOTIFY_USERNAME, scope=spotify_scope, client_id=SPOTIFY_CLIENT_ID, client_secret=SPOTIFY_CLIENT_SECRET, redirect_uri='http://localhost:8888/callback')
+    sp = spotipy.Spotify(auth=token)
+    playlist_description = f"Created by argv1 https://github.com/argv1/1live-on-spotify"
+    
     main()
